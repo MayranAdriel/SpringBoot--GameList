@@ -1,4 +1,4 @@
-package com.mayran.dsList.Controllers;
+package com.mayran.dsList.controllers;
 
 import com.mayran.dsList.dto.GameMinValuesDTO;
 import com.mayran.dsList.services.GameService;
