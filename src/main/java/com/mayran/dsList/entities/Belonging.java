@@ -1,5 +1,6 @@
 package com.mayran.dsList.entities;
 
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,16 +12,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_pertence")
-public class Pertence {
-
+@Table(name = "tb_belonging")
+public class Belonging {
     @EmbeddedId
-    private PertencePK id = new PertencePK();
-    private Integer position;
+    BelongingPK belongingPK = new BelongingPK();
+    Integer position;
 
-    public Pertence(Game game, GameList gameList, Integer position) {
-        this.id.setGameId(game);
-        this.id.setGameListId(gameList);
+    public Belonging(Game game, GameList gameList, Integer position) {
+        this.belongingPK.setGameId(game);
+        this.belongingPK.setGameListId(gameList);
         this.position = position;
     }
 }

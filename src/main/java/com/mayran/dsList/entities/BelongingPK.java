@@ -11,12 +11,12 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Embeddable
-public class PertencePK {
+public class BelongingPK {
 
     @ManyToOne
     @JoinColumn(name =  "game_id")
     private Game gameId;
     @ManyToOne
-    @JoinColumn(name = "game_list_id")
+    @JoinColumn(name = "list_id")
     private GameList gameListId;
 }
