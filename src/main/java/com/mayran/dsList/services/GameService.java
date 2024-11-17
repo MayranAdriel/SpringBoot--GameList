@@ -17,13 +17,13 @@ public class GameService {
     private GameRepository gameRepository;
     @Transactional(readOnly = true)
     public GameDTO findById(Long id){
-        Game result = gameRepository.findById(id).orElse(new Game());
+        Game result = gameRepository.findById(id).get();
         return new GameDTO(result);
-
     }
 
     public List<GameMinValuesDTO> findAll(){
         List<Game> games = gameRepository.findAll();
         return games.stream().map(GameMinValuesDTO::new).toList();
     }
+
 }
