@@ -1,6 +1,7 @@
 package com.mayran.dsList.dto;
 
 import com.mayran.dsList.entities.Game;
+import com.mayran.dsList.projections.GameMinProjection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -17,5 +18,12 @@ public class GameMinValuesDTO {
         title = entity.getTitle();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinValuesDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 }
